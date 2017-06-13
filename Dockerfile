@@ -17,7 +17,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7B2C3B0889BF5709A105D03AC2518248EEA14886 \
  && apt-get update \
  && apt-get install -y --no-install-recommends dvipng graphviz oracle-java8-installer sudo \
-                                               texlive texlive-lang-french texlive-latex-extra texlive-lang-portuguese \
+                                               texlive texlive-lang-french texlive-latex-extra \
  && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
  && curl -o /usr/local/bin/gosu     -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$(dpkg --print-architecture)" \
  && curl -o /usr/local/bin/gosu.asc -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$(dpkg --print-architecture).asc" \
@@ -34,7 +34,7 @@ RUN apt-get upgrade \
                 'alabaster                     == 0.7.10' \
                 'recommonmark                  == 0.4.0'  \
                 'sphinx-autobuild              == 0.6.0'  \
-                'sphinx-bootstrap-theme        == 0.5.3' \
+                'sphinx-bootstrap-theme        == 0.5.3'  \
                 'sphinx-prompt                 == 1.0.0'  \
                 'sphinx_rtd_theme              == 0.2.4'  \
                 'sphinxcontrib-actdiag         == 0.8.5'  \
