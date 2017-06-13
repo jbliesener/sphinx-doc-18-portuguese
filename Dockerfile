@@ -28,7 +28,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
  && rm -rf /var/cache/* \
  && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update \
+RUN apt-get upgrade \
  && pip install --upgrade pip \
  && pip install 'Sphinx                        == 1.6.2'  \
                 'alabaster                     == 0.7.10' \
