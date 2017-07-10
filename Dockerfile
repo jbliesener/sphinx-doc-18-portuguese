@@ -50,7 +50,7 @@ RUN apt-get upgrade \
 
 # RUN pip install sphinxcontrib-libreoffice == 0.2  # doesn't work
 				
-# COPY files/opt/plantuml/*  /opt/plantuml/
+COPY files/opt/plantuml/*  /opt/plantuml/
 COPY files/usr/local/bin/* /usr/local/bin/
 
 RUN chown root:root /usr/local/bin/* \
