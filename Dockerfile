@@ -49,7 +49,7 @@ RUN apt-get upgrade \
                 'sphinxcontrib-seqdiag         == 0.8.5'  \
                 'livereload                    == 2.5.1' 
 
-COPY files/opt/plantuml/*  /opt/plantuml/
+# COPY files/opt/plantuml/*  /opt/plantuml/
 COPY files/usr/local/bin/* /usr/local/bin/
 
 RUN chown root:root /usr/local/bin/* \
