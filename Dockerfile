@@ -15,8 +15,9 @@ RUN export DEBIAN_FRONTEND=noninteractive \
  && echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" >> /etc/apt/sources.list.d/webupd8team-java.list \
  && echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections \
  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7B2C3B0889BF5709A105D03AC2518248EEA14886 \
- && apt-get update \
- && apt-get install -y --no-install-recommends dvipng graphviz oracle-java8-installer sudo \
+ && apt-get update
+
+RUN apt-get install -y --no-install-recommends dvipng graphviz oracle-java8-installer sudo \
                                                texlive texlive-lang-french texlive-latex-extra
 
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
