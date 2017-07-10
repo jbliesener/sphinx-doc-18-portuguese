@@ -17,7 +17,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7B2C3B0889BF5709A105D03AC2518248EEA14886 \
  && apt-get update \
  && apt-get install -y --no-install-recommends dvipng graphviz oracle-java8-installer sudo \
-                                               texlive texlive-lang-french texlive-latex-extra \
+                                               texlive texlive-lang-french texlive-latex-extra texlive-lang-portuguese \
  && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
  && curl -o /usr/local/bin/gosu     -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$(dpkg --print-architecture)" \
  && curl -o /usr/local/bin/gosu.asc -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$(dpkg --print-architecture).asc" \
