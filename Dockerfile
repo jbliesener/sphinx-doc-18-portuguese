@@ -43,12 +43,13 @@ RUN apt-get upgrade \
                 'sphinxcontrib-googleanalytics == 0.1'    \
                 'sphinxcontrib-googlechart     == 0.2.1'  \
                 'sphinxcontrib-googlemaps      == 0.1.0'  \
-                'sphinxcontrib-libreoffice     == 0.2'    \
                 'sphinxcontrib-nwdiag          == 0.9.5'  \
                 'sphinxcontrib-plantuml        == 0.8.1'  \
                 'sphinxcontrib-seqdiag         == 0.8.5'  \
                 'livereload                    == 2.5.1' 
 
+# RUN pip install sphinxcontrib-libreoffice == 0.2  # doesn't work
+				
 # COPY files/opt/plantuml/*  /opt/plantuml/
 COPY files/usr/local/bin/* /usr/local/bin/
 
