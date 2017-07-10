@@ -29,7 +29,7 @@ RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364
  && apt-get autoremove -y
 
 RUN apt-get upgrade -y
-RUN apt-get install -y texlive-lang-portuguese
+RUN apt-get install -y texlive-lang-portuguese latexmk
 
 RUN rm -rf /var/cache/* \
  && rm -rf /var/lib/apt/lists/*
