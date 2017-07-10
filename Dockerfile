@@ -26,7 +26,7 @@ RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364
  && gpg --verify /usr/local/bin/gosu.asc \
  && rm /usr/local/bin/gosu.asc \
  && chmod +x /usr/local/bin/gosu \
- && apt-get autoremove -y \
+ && apt-get autoremove -y
 
 RUN apt-get upgrade
 RUN apt-get install texlive-lang-portuguese
