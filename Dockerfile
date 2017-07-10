@@ -17,19 +17,23 @@ RUN export DEBIAN_FRONTEND=noninteractive \
  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7B2C3B0889BF5709A105D03AC2518248EEA14886 \
  && apt-get update \
  && apt-get install -y --no-install-recommends dvipng graphviz oracle-java8-installer sudo \
-                                               texlive texlive-lang-french texlive-latex-extra texlive-lang-portuguese \
- && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
+                                               texlive texlive-lang-french texlive-latex-extra
+
+RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
  && curl -o /usr/local/bin/gosu     -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$(dpkg --print-architecture)" \
  && curl -o /usr/local/bin/gosu.asc -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$(dpkg --print-architecture).asc" \
  && gpg --verify /usr/local/bin/gosu.asc \
  && rm /usr/local/bin/gosu.asc \
  && chmod +x /usr/local/bin/gosu \
  && apt-get autoremove -y \
- && rm -rf /var/cache/* \
+
+RUN apt-get upgrade
+RUN apt-get install texlive-lang-portuguese
+
+RUN rm -rf /var/cache/* \
  && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get upgrade \
- && pip install --upgrade pip \
+RUN pip install --upgrade pip \
  && pip install 'Sphinx                        == 1.6.2'  \
                 'alabaster                     == 0.7.10' \
                 'recommonmark                  == 0.4.0'  \
@@ -46,10 +50,10 @@ RUN apt-get upgrade \
                 'sphinxcontrib-nwdiag          == 0.9.5'  \
                 'sphinxcontrib-plantuml        == 0.8.1'  \
                 'sphinxcontrib-seqdiag         == 0.8.5'  \
-                'livereload                    == 2.5.1' 
+                'livereload                    == 2.5.1'
 
 # RUN pip install sphinxcontrib-libreoffice == 0.2  # doesn't work
-				
+
 COPY files/opt/plantuml/*  /opt/plantuml/
 COPY files/usr/local/bin/* /usr/local/bin/
 
