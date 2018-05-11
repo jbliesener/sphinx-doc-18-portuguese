@@ -5,7 +5,7 @@
 #
 # docker build -t jbliesener/sphinx-doc-portuguese .
 
-FROM       python:2.7.13
+FROM       python:3.6
 MAINTAINER Jorg Neves Bliesener
 
 RUN export DEBIAN_FRONTEND=noninteractive \
@@ -34,13 +34,13 @@ RUN rm -rf /var/cache/* \
  && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip \
- && pip install 'Sphinx                        == 1.6.2'  \
+ && pip install 'Sphinx                        == 1.7.4'  \
                 'alabaster                     == 0.7.10' \
                 'recommonmark                  == 0.4.0'  \
-                'sphinx-autobuild              == 0.6.0'  \
-                'sphinx-bootstrap-theme        == 0.5.3'  \
+                'sphinx-autobuild              == 0.7.1'  \
+                'sphinx-bootstrap-theme        == 0.6.5'  \
                 'sphinx-prompt                 == 1.0.0'  \
-                'sphinx_rtd_theme              == 0.2.4'  \
+                'sphinx_rtd_theme              == 0.3.1'  \
                 'sphinxcontrib-actdiag         == 0.8.5'  \
                 'sphinxcontrib-blockdiag       == 1.5.5'  \
                 'sphinxcontrib-exceltable      == 0.2.2'  \
@@ -48,9 +48,11 @@ RUN pip install --upgrade pip \
                 'sphinxcontrib-googlechart     == 0.2.1'  \
                 'sphinxcontrib-googlemaps      == 0.1.0'  \
                 'sphinxcontrib-nwdiag          == 0.9.5'  \
-                'sphinxcontrib-plantuml        == 0.8.1'  \
+                'sphinxcontrib-plantuml        == 0.11'   \
                 'sphinxcontrib-seqdiag         == 0.8.5'  \
-                'livereload                    == 2.5.1'
+                'livereload                    == 2.5.2'  \
+
+RUN pip install git+https://github.com/mherkazandjian/docxsphinx.git@master
 
 # RUN pip install sphinxcontrib-libreoffice == 0.2  # doesn't work
 
