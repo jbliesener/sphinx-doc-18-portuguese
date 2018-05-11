@@ -17,7 +17,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7B2C3B0889BF5709A105D03AC2518248EEA14886 \
  && apt-get update
 
-RUN apt-get install -y --no-install-recommends dvipng graphviz oracle-java8-installer sudo texlive texlive-lang-french texlive-latex-extra
+RUN apt-get install -y -q --no-install-recommends dvipng graphviz oracle-java8-installer sudo texlive texlive-lang-french texlive-latex-extra
 
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
  && curl -o /usr/local/bin/gosu     -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$(dpkg --print-architecture)" \
@@ -25,10 +25,10 @@ RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364
  && gpg --verify /usr/local/bin/gosu.asc \
  && rm /usr/local/bin/gosu.asc \
  && chmod +x /usr/local/bin/gosu \
- && apt-get autoremove -y
+ && apt-get autoremove -y -q
 
-RUN apt-get upgrade -y
-RUN apt-get install -y texlive-lang-portuguese latexmk
+RUN apt-get upgrade -y -q
+RUN apt-get install -y -q texlive-lang-portuguese latexmk
 
 RUN rm -rf /var/cache/* \
  && rm -rf /var/lib/apt/lists/*
@@ -50,9 +50,9 @@ RUN pip install --upgrade pip \
                 'sphinxcontrib-nwdiag          == 0.9.5'  \
                 'sphinxcontrib-plantuml        == 0.11'   \
                 'sphinxcontrib-seqdiag         == 0.8.5'  \
-                'livereload                    == 2.5.2' 
+                'livereload                    == 2.5.2'
 
-RUN pip install git+https://github.com/mherkazandjian/docxsphinx.git@master
+RUN pip install 'git+https://github.com/mherkazandjian/docxsphinx.git@master'
 
 # RUN pip install sphinxcontrib-libreoffice == 0.2  # doesn't work
 
