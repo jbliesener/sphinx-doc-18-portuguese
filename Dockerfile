@@ -50,7 +50,7 @@ RUN pip install --upgrade pip \
                 'sphinxcontrib-nwdiag          == 0.9.5'  \
                 'sphinxcontrib-plantuml        == 0.11'   \
                 'sphinxcontrib-seqdiag         == 0.8.5'  \
-                'livereload                    == 2.5.2'  \
+                'livereload                    == 2.5.2' 
 
 RUN pip install git+https://github.com/mherkazandjian/docxsphinx.git@master
 
