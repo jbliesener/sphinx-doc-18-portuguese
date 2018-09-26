@@ -34,13 +34,13 @@ RUN rm -rf /var/cache/* \
  && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip \
- && pip install 'Sphinx                        == 1.7.5'  \
-                'alabaster                     == 0.7.10' \
+ && pip install 'Sphinx                        == 1.8.0'  \
+                'alabaster                     == 0.7.11' \
                 'recommonmark                  == 0.4.0'  \
                 'sphinx-autobuild              == 0.7.1'  \
                 'sphinx-bootstrap-theme        == 0.6.5'  \
                 'sphinx-prompt                 == 1.0.0'  \
-                'sphinx_rtd_theme              == 0.3.1'  \
+                'sphinx_rtd_theme              == 0.4.1'  \
                 'sphinxcontrib-actdiag         == 0.8.5'  \
                 'sphinxcontrib-blockdiag       == 1.5.5'  \
                 'sphinxcontrib-exceltable      == 0.2.2'  \
@@ -48,7 +48,7 @@ RUN pip install --upgrade pip \
                 'sphinxcontrib-googlechart     == 0.2.1'  \
                 'sphinxcontrib-googlemaps      == 0.1.0'  \
                 'sphinxcontrib-nwdiag          == 0.9.5'  \
-                'sphinxcontrib-plantuml        == 0.11'   \
+                'sphinxcontrib-plantuml        == 0.12'   \
                 'sphinxcontrib-seqdiag         == 0.8.5'  \
                 'livereload                    == 2.5.2'
 
