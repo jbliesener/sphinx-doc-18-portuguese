@@ -34,7 +34,7 @@ RUN rm -rf /var/cache/* \
  && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip \
- && pip install 'Sphinx                        == 1.8.0'  \
+ && pip install 'Sphinx                        == 1.8.5'  \
                 'alabaster                     == 0.7.11' \
                 'recommonmark                  == 0.4.0'  \
                 'sphinx-autobuild              == 0.7.1'  \
