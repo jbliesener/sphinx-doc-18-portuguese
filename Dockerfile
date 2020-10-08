@@ -52,7 +52,7 @@ RUN pip install --upgrade pip \
                 'sphinxcontrib-seqdiag         == 0.8.5'  \
                 'livereload                    == 2.5.2'
 
-RUN pip install 'git+https://github.com/mherkazandjian/docxsphinx.git@master'
+RUN pip install 'docxbuilder[math] == 1.2.0'
 
 # RUN pip install sphinxcontrib-libreoffice == 0.2  # doesn't work
 
